@@ -17,7 +17,7 @@ The main motivation behind this app is, that this is a combination of things tha
 
 ## Server-Side Components:
 
-1.	User Authentication: 1.	A server-side authentication for users to login to application.
+1.	User Authentication: A server-side authentication for users to login to application.
     It saves the unique a) user id b) password and c) associated email address. 
 
 2.	Personal data entered into journal: Save personal information as texts in database.
