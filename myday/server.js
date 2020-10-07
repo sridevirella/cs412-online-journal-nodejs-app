@@ -1,39 +1,38 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const httpStatus = require('http-status-codes');
+const mimeType = require('mime-types');
+
+const port = 3000;
+const routes = {
+    '/' : './public/views/index.html',
+    '/about': './public/views/about.html'
+};
 
 (function (){
     http.createServer((req, res) => {
 
-        let filepath = '.' + req.url;
-        if( filepath === './' ) {
-            filepath = './public/views/index.html'
-        }
+        let route = routes[req.url]
+        if( !route )
+            route = '.' + req.url;
 
-        let contentTypes = {
-            '.html': "text/html",
-            '.js': "text/javascript",
-            '.css': "text/css",
-            '.jpg': "image/jpg"
-        }
-
-        if ( !fs.existsSync( filepath)) {
-            res.writeHead( 404)
+        if ( !fs.existsSync( route )) {
+            res.writeHead( httpStatus.NOT_FOUND)
             res.end()
         }
         else{
-            fs.readFile( filepath, function (error, content){
+            fs.readFile( route, function (error, content){
                 if( error ){
-                    res.writeHead(500)
+                    res.writeHead(httpStatus.INTERNAL_SERVER_ERROR)
                     res.end()
                 }
                 else{
-                    let contentType = contentTypes[path.extname(filepath)];
-                    res.setHeader('Content-Type', contentType)
-                    res.writeHead(200)
+                    res.setHeader('Content-Type', mimeType.lookup(route))
+                    res.writeHead(httpStatus.OK)
                     res.end(content, 'utf-8')
                 }
             })
         }
-    }).listen(3000, () => console.log('localhost server is running on port 3000...'))
+    }).listen(port, () => console.log(`localhost server is running on port ${port}`))
 })()
