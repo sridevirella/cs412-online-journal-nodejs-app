@@ -1768,7 +1768,6 @@ process.umask = function() { return 0; };
 
 },{}],28:[function(require,module,exports){
 const axios = require('axios')
-//const promise = new promise()
 
 exports.getActivity = function (){
 
@@ -1779,13 +1778,14 @@ exports.getActivity = function (){
             createElements(response.data['activity']);
         })
         .catch( error => {
-            console.log( error)
+            console.log("inside catch:"+ error.message)
         })
 
     function createElements(resData){
 
         var spanElement = document.createElement('span');
-        spanElement.innerText = resData;
+        if( resData !== undefined)
+            spanElement.innerText = resData;
         var divElement = document.querySelector('#div2');
         divElement.appendChild(spanElement);
     }

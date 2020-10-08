@@ -9,13 +9,14 @@ exports.getActivity = function (){
             createElements(response.data['activity']);
         })
         .catch( error => {
-            console.log( error)
+            console.log("inside catch:"+ error.message)
         })
 
     function createElements(resData){
 
         var spanElement = document.createElement('span');
-        spanElement.innerText = resData;
+        if( resData !== undefined)
+            spanElement.innerText = resData;
         var divElement = document.querySelector('#div2');
         divElement.appendChild(spanElement);
     }

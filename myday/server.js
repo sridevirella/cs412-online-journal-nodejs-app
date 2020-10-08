@@ -16,6 +16,7 @@ const routes = {
         let route = routes[req.url]
         if( !route )
             route = '.' + req.url;
+        console.log(route)
 
         if ( !fs.existsSync( route )) {
             res.writeHead( httpStatus.NOT_FOUND)
