@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7285d0d-e655-4d71-bac3-17bdc48df338" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/lib/api_bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/lib/api_bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="3cff09c8-3da7-4df9-bdbd-52650b857efe" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,31 +10,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/public/js/api.js" root0="SKIP_INSPECTION" />
-  </component>
-  <component name="ProjectId" id="1hW0TWhlAUOslGlXFp8a3xeNN9R" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1iqBIit9eeIFOgI5wQLDn6wLuPV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.12.58" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.12.67" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -48,129 +33,77 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\public\js" />
-      <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\public\images" />
+      <recent name="E:\NEIU\FALL_2020\412\expressproject\myday\public\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\NEIU\FALL_2020\412\expressproject\myday\views\layouts" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server.js" working-dir="$PROJECT_DIR$">
+  <component name="RunManager" selected="npm.start-watch">
+    <configuration name="app.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+      <envs>
+        <env name="DEBUG" value="myday:*" />
+      </envs>
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Node.js.server.js" />
-      </list>
-    </recent_temporary>
+    <configuration name="start-watch" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start-watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.app.js" />
+      <item itemvalue="npm.start-watch" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d7285d0d-e655-4d71-bac3-17bdc48df338" name="Default Changelist" comment="" />
-      <created>1600111548335</created>
+      <changelist id="3cff09c8-3da7-4df9-bdbd-52650b857efe" name="Default Changelist" comment="" />
+      <created>1602625163756</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1600111548335</updated>
-      <workItem from="1600111549406" duration="567000" />
-      <workItem from="1600112206196" duration="21045000" />
-      <workItem from="1600183999476" duration="4773000" />
-      <workItem from="1600209007608" duration="961000" />
-      <workItem from="1600228135112" duration="384000" />
-      <workItem from="1600270428628" duration="2530000" />
-      <workItem from="1600279899496" duration="3756000" />
-      <workItem from="1600299773976" duration="1136000" />
-      <workItem from="1600306209576" duration="110000" />
-      <workItem from="1600310042069" duration="1003000" />
-      <workItem from="1600823222612" duration="9335000" />
-      <workItem from="1600883997186" duration="1560000" />
-      <workItem from="1600893556784" duration="7798000" />
-      <workItem from="1601345283684" duration="238000" />
-      <workItem from="1601362194969" duration="316000" />
-      <workItem from="1601391740275" duration="7470000" />
-      <workItem from="1601423091885" duration="1056000" />
-      <workItem from="1601501138964" duration="3085000" />
-      <workItem from="1602001071164" duration="20595000" />
-      <workItem from="1602088414388" duration="11684000" />
+      <updated>1602625163756</updated>
+      <workItem from="1602625164842" duration="8791000" />
     </task>
-    <task id="LOCAL-00001" summary="Added project folder">
-      <created>1600189790487</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1600189790487</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Event Emitters - Hw5">
-      <created>1601413178599</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1601413178599</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Promises and DOM - HW06">
-      <created>1602048072522</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1602048072522</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Promises and DOM - HW06">
-      <created>1602048220677</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1602048220677</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added project folder" />
-    <MESSAGE value="Event Emitters - Hw5" />
-    <MESSAGE value="Promises and DOM - HW06" />
-    <option name="LAST_COMMIT_MESSAGE" value="Promises and DOM - HW06" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601508730698">
+    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602629936913">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601508730698" />
-    <state x="455" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600150420249">
+    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1602629936913" />
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602628329807">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="455" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1600150420249" />
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600188572315">
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1602628329807" />
+    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1602629424174">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600188572315" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1602048219845">
+    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602629424174" />
+    <state width="1345" height="199" key="GridCell.Tab.0.bottom" timestamp="1602634027755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1602048219845" />
-    <state width="1345" height="150" key="GridCell.Tab.0.bottom" timestamp="1602112182788">
+    <state width="1345" height="199" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602634027755" />
+    <state width="1345" height="199" key="GridCell.Tab.0.center" timestamp="1602634027755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="150" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602112182788" />
-    <state width="1345" height="150" key="GridCell.Tab.0.center" timestamp="1602112182788">
+    <state width="1345" height="199" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602634027755" />
+    <state width="1345" height="199" key="GridCell.Tab.0.left" timestamp="1602634027755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="150" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602112182788" />
-    <state width="1345" height="150" key="GridCell.Tab.0.left" timestamp="1602112182788">
+    <state width="1345" height="199" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602634027755" />
+    <state width="1345" height="199" key="GridCell.Tab.0.right" timestamp="1602634027755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="150" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602112182788" />
-    <state width="1345" height="150" key="GridCell.Tab.0.right" timestamp="1602112182788">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="150" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602112182788" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1602048240582">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1602048240582" />
-    <state x="474" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1601412994508">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="474" y="97" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1366.728@0.0.1366.728" timestamp="1601412994508" />
+    <state width="1345" height="199" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602634027755" />
   </component>
 </project>
