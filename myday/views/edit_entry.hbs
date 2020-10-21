@@ -1,0 +1,40 @@
+<h1>{{pageHeader}}</h1>
+<img src="/images/edit.png" class="edit-img" alt="edit icon"/>
+<br/>
+<div class="container">
+    <form method="post" action="/diary_entries/save">
+        <input type="hidden" name="saveMethod" value="{{#if isCreate}}create{{else}}update{{/if}}">
+        <input type="hidden" name="entryKey" value="{{ entryKey }}">
+
+        <div class="row">
+            <div class="col-25">
+                <label for="date" >Date</label>
+            </div>
+            <div class="col-75">
+                <input type="date" name="day" value="{{ entryDate }}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="title">Title</label>
+            </div>
+            <div class="col-75">
+                <input type="text" name="title" value="{{ entryTitle }}"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="notes">Your Thoughts</label>
+            </div>
+            <div class="col-75">
+                <textarea rows="5" cols="50" name="body">{{ entryNote }}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,19 @@
+<h1>{{pageHeader}}</h1>
+<img src="/images/viewAll.png" alt="view icon"/>
+<br/>
+<div class="list">
+    <ul>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Entry Title</th>
+            </tr>
+            {{#each entryList}}
+                <tr>
+                    <td>{{ date }}</td>
+                    <td><a class="each-item" href="/diary_entries/view?key={{ key }}">{{ title }}</a> </td>
+                </tr>
+            {{/each}}
+        </table>
+    </ul>
+</div>

@@ -1,0 +1,21 @@
+<h1>{{pageHeader}}</h1>
+<img src="/images/view.png" class="view-img" alt="item view icon"/>
+<br/>
+<div class="container">
+    <h3>{{ entryTitle }}</h3>
+    <hr/>
+
+    <div class="date-element">
+        <img src="/images/date.png" class="date-img">
+        {{ entryDate }}
+    </div>
+    <hr/>
+    <p>{{ entryNote }}</p>
+    <hr/>
+    <div class="ed-div">
+        <p>
+            <span><a class="each-item" href="/diary_entries/edit?key={{ entryKey }}">Edit</span>
+            <span><a class="each-item" href="/diary_entries/delete?key={{ entryKey }}">Delete</span>
+        </p>
+    </div>
+</div>

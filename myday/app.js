@@ -5,8 +5,13 @@ const logger = require('morgan')
 const http = require('http')
 const hbs = require('express-handlebars')
 
+const InMemoryEntriesStore = require('./models/entries_memory').InMemoryEntriesStore
+let entriesStore = new InMemoryEntriesStore()
+exports.entriesStore = entriesStore
+
 const appSupport = require('./appsupport')
 const indexRouter = require('./routes/index')
+const entriesRouter = require('./routes/diary_entries')
 
 const app = express()
 exports.app = app
@@ -18,7 +23,7 @@ app.engine('hbs', hbs({
     extname : 'hbs',
     defaultLayout: 'layout',
     layoutsDir: __dirname + '/views/layouts',
-    partialsDir: __dirname + '/views/layouts'
+    partialsDir: __dirname + '/views/partials'
 }))
 
 app.use(logger('dev'))
@@ -29,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 //Router function lists
 app.use('/', indexRouter)
+app.use('/diary_entries', entriesRouter)
 
 //Error handlers
 app.use(appSupport.basicErrorHandler)
