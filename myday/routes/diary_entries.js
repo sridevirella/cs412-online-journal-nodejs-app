@@ -83,7 +83,6 @@ router.get('/edit', async (req, res, next) => {
 router.get('/view', async (req, res, next) => {
     try{
         let entry = await entriesStore.read(req.query.key)
-        console.log('mana value:',req.query.key)
         res.render('view_entry', {
             browserTitle: 'View Page',
             pageHeading: 'View an Entry',
