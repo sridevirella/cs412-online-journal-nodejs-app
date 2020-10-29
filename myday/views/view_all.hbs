@@ -1,19 +1,37 @@
-<h1>{{pageHeader}}</h1>
-<img src="/images/viewAll.png" alt="view icon"/>
-<br/>
-<div class="list">
-    <ul>
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>Entry Title</th>
-            </tr>
-            {{#each entryList}}
-                <tr>
-                    <td>{{ date }}</td>
-                    <td><a class="each-item" href="/diary_entries/view?key={{ key }}">{{ title }}</a> </td>
-                </tr>
-            {{/each}}
-        </table>
-    </ul>
+<div class="container-fluid mt-5 mb-5">
+    <div class="row justify-content-center">
+        <img src="/assets/images/viewAll.png" alt="view icon"/>
+    </div>
 </div>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="btn-group-vertical" role="group">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr >
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {{#each entryList}}
+                    <tr class="clickable-table" onclick="window.location='/diary_entries/view?key={{ key }}'">
+                    <td>{{ date }}</td>
+                    <td>{{ title }}</td>
+                    <td>
+                        <a class="each-item mr-1" href="/diary_entries/view?key={{ key }}"><i class="eye" data-feather="eye"></i></a>
+                        <a class="each-item mr-1" href="/diary_entries/edit?key={{ key }}"><i class="edit" data-feather="edit"></i></a>
+                        <a class="each-item mr-1" href="/diary_entries/delete?key={{ key }}"> <i class="delete" data-feather="x-square"> </i></a>
+                    </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+

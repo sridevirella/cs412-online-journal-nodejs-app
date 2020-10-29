@@ -1,0 +1,58 @@
+
+body {
+  font: 14px Lato, "Montserrat", sans-serif;
+}
+
+.clickable-table {
+  cursor:pointer;
+}
+
+.edit .eye {
+  width:30px!important;
+  height:30px!important;
+}
+
+.delete {
+  color:red;
+  width:25px!important;
+  height:25px!important;
+}
+
+.list-group-item {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.btn-light:not(:disabled):not(.disabled).active {
+  background-color: #a6eef1;
+}
+
+.navbar-text {
+  font-size: xx-large;
+}
+
+.navbar-toggler {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.navbar-dark .navbar-text {
+  color: #f8f9fa;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.form-class {
+  background-color: gainsboro;
+}

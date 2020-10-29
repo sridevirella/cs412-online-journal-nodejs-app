@@ -7,8 +7,9 @@ router.get('/add', async (req, res, next) => {
         res.render('add_entry',{
             isCreate: true,
             browserTitle: 'Add Page',
-            pageHeading: 'Add an Entry',
+            pageHeading: 'Add An Entry',
             styles : ['/stylesheets/style.css'],
+            isAddActive: 'active',
             entryKey: await entriesStore.count()
         })
     } catch (err) {
@@ -43,7 +44,8 @@ router.get('/viewAll', async (req, res, next) => {
             { browserTitle: 'View All page',
                      pageHeading: 'All Diary Entries',
                      styles : ['/stylesheets/style.css'],
-                     entryList: extractNotesToLiteral(allEntries)})
+                     isViewAllActive: 'active',
+                     entryList: extractNotesToLiteral(allEntries)}) // this line gives all entries
     } catch (err) {
         next(err)
     }
@@ -91,31 +93,13 @@ router.get('/view', async (req, res, next) => {
             entryDate: entry.date,
             entryTitle: entry.title,
             entryNote: entry.notes
-
         })
     } catch (err) {
         next(err)
     }
 })
 
-router.get('/delete', async (req, res, next) => {
-    try{
-        let entry = await entriesStore.read(req.query.key)
-        res.render('delete_entry', {
-            browserTitle: 'Delete Page',
-            pageHeading: 'Delete an Entry',
-            styles : ['/stylesheets/style.css'],
-            entryKey: entry.key,
-            entryDate: entry.date,
-            entryTitle: entry.title,
-            entryNote: entry.notes
-        })
-    } catch (err) {
-        next(err)
-    }
-})
-
-router.post('/remove', async (req, res, next) =>{
+router.get('/delete', async (req, res, next) =>{
     try{
         await entriesStore.destroy(req.query.key)
         res.redirect('/diary_entries/viewAll')

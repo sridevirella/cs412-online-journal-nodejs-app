@@ -3,7 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="3cff09c8-3da7-4df9-bdbd-52650b857efe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/add.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/add.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/date.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/date.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/delete.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/delete.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/edit.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/edit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/journal.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/journal.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/title.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/title.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/view.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/view.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/viewAll.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/viewAll.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/stylesheets/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/diary_entries.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/diary_entries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/add_entry.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/add_entry.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/delete_entry.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/edit_entry.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/edit_entry.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/error.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/layout.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/header.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/view_all.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/view_all.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/view_entry.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/view_entry.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,12 +61,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\NEIU\FALL_2020\412\expressproject\myday\views\layouts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\public\images" />
       <recent name="E:\NEIU\FALL_2020\412\expressproject\myday\public\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\public\assets" />
+      <recent name="E:\NEIU\FALL_2020\412\expressproject\myday\views\layouts" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.app.js">
@@ -87,7 +110,12 @@
       <workItem from="1603155627218" duration="10169000" />
       <workItem from="1603220621558" duration="35130000" />
       <workItem from="1603288206747" duration="3355000" />
-      <workItem from="1603293139389" duration="682000" />
+      <workItem from="1603293139389" duration="968000" />
+      <workItem from="1603312436856" duration="1060000" />
+      <workItem from="1603315726462" duration="5686000" />
+      <workItem from="1603833384509" duration="31770000" />
+      <workItem from="1603920533368" duration="19706000" />
+      <workItem from="1603983867002" duration="11261000" />
     </task>
     <task id="LOCAL-00001" summary="Express,HandleBars - HW08">
       <created>1603293744504</created>
@@ -96,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603293744504</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Express,HandleBars - HW08">
+      <created>1603293857775</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603293857775</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,33 +154,33 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1602628329807" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1603293743191">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1603293856782">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603293743191" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603293856782" />
     <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1602629424174">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602629424174" />
-    <state width="1345" height="140" key="GridCell.Tab.0.bottom" timestamp="1603291605332">
+    <state width="1345" height="97" key="GridCell.Tab.0.bottom" timestamp="1604000637475">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="140" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603291605332" />
-    <state width="1345" height="140" key="GridCell.Tab.0.center" timestamp="1603291605331">
+    <state width="1345" height="97" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604000637475" />
+    <state width="1345" height="97" key="GridCell.Tab.0.center" timestamp="1604000637475">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="140" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603291605331" />
-    <state width="1345" height="140" key="GridCell.Tab.0.left" timestamp="1603291605331">
+    <state width="1345" height="97" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604000637475" />
+    <state width="1345" height="97" key="GridCell.Tab.0.left" timestamp="1604000637475">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="140" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603291605331" />
-    <state width="1345" height="140" key="GridCell.Tab.0.right" timestamp="1603291605331">
+    <state width="1345" height="97" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604000637475" />
+    <state width="1345" height="97" key="GridCell.Tab.0.right" timestamp="1604000637475">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="140" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603291605331" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1603293754926">
+    <state width="1345" height="97" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604000637475" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1603293868483">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1603293754926" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1603293868483" />
   </component>
 </project>

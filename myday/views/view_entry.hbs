@@ -1,21 +1,22 @@
-<h1>{{pageHeader}}</h1>
-<img src="/images/view.png" class="view-img" alt="item view icon"/>
-<br/>
-<div class="container">
-    <h3>{{ entryTitle }}</h3>
-    <hr/>
-
-    <div class="date-element">
-        <img src="/images/date.png" class="date-img">
-        {{ entryDate }}
+<div class="container-fluid mt-5 mb-5">
+    <div class="row justify-content-center">
+        <img src="/assets/images/view.png" class="view-img" alt="item view icon"/>
     </div>
-    <hr/>
-    <p>{{ entryNote }}</p>
-    <hr/>
-    <div class="ed-div">
-        <p>
-            <span><a class="each-item" href="/diary_entries/edit?key={{ entryKey }}">Edit</span>
-            <span><a class="each-item" href="/diary_entries/delete?key={{ entryKey }}">Delete</span>
-        </p>
+</div>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+    <ul class="list-group text-center">
+        <li class="list-group-item border border-dark list-group-item-dark"><h3>{{ entryTitle }}</h3></li>
+        <li class="list-group-item border border-dark">
+           <i class="calendar" data-feather="calendar"></i>
+            {{ entryDate }}
+        </li>
+            <li class="list-group-item border border-dark list-group-item-dark">{{ entryNote }}</li>
+        <li class="list-group-item border border-dark">
+            <a href="/diary_entries/edit?key={{ entryKey }}"><i class="mr-2 edit" data-feather="edit"></i></a>
+            <a href="/diary_entries/delete?key={{ entryKey }}"><i class="delete" data-feather="x-square"></i></a>
+        </li>
+    </ul>
     </div>
 </div>
