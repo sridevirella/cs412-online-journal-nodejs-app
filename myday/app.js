@@ -5,8 +5,20 @@ const logger = require('morgan')
 const http = require('http')
 const hbs = require('express-handlebars')
 
-const InMemoryEntriesStore = require('./models/entries_memory').InMemoryEntriesStore
-let entriesStore = new InMemoryEntriesStore()
+const mongoose = require('mongoose')
+
+    try {
+         mongoose.connect(process.env.DB_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+             useCreateIndex: true
+        })
+    }catch (err) {
+        console.log(err)
+    }
+
+const MongooseEntriesStore = require('./models/entries_mongoose').MongooseEntriesStore
+let entriesStore = new MongooseEntriesStore()
 exports.entriesStore = entriesStore
 
 const appSupport = require('./appsupport')

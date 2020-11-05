@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+let moment = require('moment')
 let entriesStore = require('../app').entriesStore
 
 router.get('/add', async (req, res, next) => {
@@ -17,7 +18,7 @@ router.get('/add', async (req, res, next) => {
     }
 })
 
-router.post('/save', async (req, res, next) =>{
+router.post('/save', async (req, res, next) => {
     try{
         let entry;
         if(req.body.saveMethod === 'create')
@@ -33,46 +34,31 @@ router.post('/save', async (req, res, next) =>{
 
 router.get('/viewAll', async (req, res, next) => {
     try{
-        let keyList = await entriesStore.keyList()
-        //List of promises for each key
-        let keyPromises = keyList.map(key => {
-            return entriesStore.read(key)
-        })
-        let allEntries = await Promise.all(keyPromises)
+        let allEntries = await entriesStore.findAllDairyEntries()
 
         res.render('view_all',
             { browserTitle: 'View All page',
                      pageHeading: 'All Diary Entries',
                      styles : ['/stylesheets/style.css'],
                      isViewAllActive: 'active',
-                     entryList: extractNotesToLiteral(allEntries)}) // this line gives all entries
+                     entryList: allEntries})
     } catch (err) {
         next(err)
     }
 })
 
-function extractNotesToLiteral(allEntries) {
-    return allEntries.map(entry => {
-            return {
-                key: entry.key,
-                date: entry.date,
-                title: entry.title
-            }
-        })
-}
-
 router.get('/edit', async (req, res, next) => {
     try{
 
         let entry = await entriesStore.read(req.query.key)
-        console.log("notes::",entry.notes)
+
         res.render('edit_entry', {
             isCreate: false,
             browserTitle: 'Edit Page',
             pageHeading: 'Edit an Entry',
             styles : ['/stylesheets/style.css'],
             entryKey: entry.key,
-            entryDate: entry.date,
+            entryDate: moment.utc(entry.date).format( 'YYYY-MM-DD'),
             entryTitle: entry.title,
             entryNote: entry.notes
 
@@ -90,7 +76,7 @@ router.get('/view', async (req, res, next) => {
             pageHeading: 'View an Entry',
             styles : ['/stylesheets/style.css'],
             entryKey: entry.key,
-            entryDate: entry.date,
+            entryDate: moment.utc(entry.date).format("YYYY MMM D (dddd)"),
             entryTitle: entry.title,
             entryNote: entry.notes
         })
