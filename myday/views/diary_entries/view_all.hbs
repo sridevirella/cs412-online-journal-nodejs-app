@@ -1,0 +1,46 @@
+<div class="container-fluid mt-5 mb-5">
+    <div class="row justify-content-center">
+        <img src="/assets/images/viewAll.png" alt="view icon"/>
+    </div>
+</div>
+<div class="container-fluid m-2">
+    {{> user_messages}}
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="btn-group-vertical" role="group">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr >
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {{#each entryList}}
+                    <tr class="clickable-table" >
+                    <td>{{ date }}</td>
+                    <td>{{ title }}</td>
+                    <td>
+                        <a class="each-item mr-1" href="/diary_entries/view?id={{ _id }}"><i class="eye" data-feather="eye"></i></a>
+                        <a class="each-item mr-1" href="/diary_entries/edit?id={{ _id }}"><i class="edit" data-feather="edit"></i></a>
+                        <a class="each-item mr-1" ><i class="delete" data-feather="x-square" data-toggle="modal" data-target="#myModal"> </i></a>
+                        {{> delete_modal }}
+                    </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+
+
+

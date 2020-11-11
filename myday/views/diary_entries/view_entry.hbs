@@ -1,0 +1,25 @@
+<div class="container-fluid mt-5 mb-5">
+    <div class="row justify-content-center">
+        <img src="/assets/images/view.png" class="view-img" alt="item view icon"/>
+    </div>
+</div>
+<div class="container-fluid m-2">
+    {{> user_messages}}
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+    <ul class="list-group text-center">
+        <li class="list-group-item border border-dark list-group-item-dark"><h3>{{ entryTitle }}</h3></li>
+        <li class="list-group-item border border-dark">
+           <i class="calendar" data-feather="calendar"></i>
+            {{ entryDate }}
+        </li>
+            <li class="list-group-item border border-dark list-group-item-dark">{{ entryNote }}</li>
+        <li class="list-group-item border border-dark">
+            <a href="/diary_entries/edit?id={{ _id }}"><i class="mr-2 edit" data-feather="edit"></i></a>
+            <i class="delete" data-feather="x-square" data-toggle="modal" data-target="#myModal"></i></a>
+            {{> delete_modal }}
+        </li>
+    </ul>
+    </div>
+</div>

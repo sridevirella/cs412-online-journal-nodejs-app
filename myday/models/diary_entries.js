@@ -1,20 +1,7 @@
-exports.AbstarctEntriesStore = class AbstractEntriesStore {
-    async close() {}
-    async create() {}
-    async read() {}
-    async update() {}
-    async destroy() {}
-    async keyList() {}
-    async count() {}
-}
-
 const mongoose = require('mongoose')
+
 const DiaryEntrySchema = new mongoose.Schema({
-    key: {
-        type: Number,
-        required: true,
-        unique: true
-    },
+
     date: {
         type: Date,
         required: [true, 'Date is required']

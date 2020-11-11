@@ -1,42 +1,34 @@
 const express = require('express')
 const router = express.Router()
 let moment = require('moment')
-let entriesStore = require('../app').entriesStore
+const { entryValidations, entryController } = require('../controllers/entries_controller')
 
 router.get('/add', async (req, res, next) => {
     try{
-        res.render('add_entry',{
+        console.log("time value:", moment.utc(new Date()).format( 'YYYY-MM-DD'))
+        res.render('diary_entries/add_entry',{
             isCreate: true,
             browserTitle: 'Add Page',
             pageHeading: 'Add An Entry',
             styles : ['/stylesheets/style.css'],
             isAddActive: 'active',
-            entryKey: await entriesStore.count()
+            maxDate: moment(new Date()).format( 'YYYY-MM-DD')
         })
     } catch (err) {
         next(err)
     }
 })
 
-router.post('/save', async (req, res, next) => {
-    try{
-        let entry;
-        if(req.body.saveMethod === 'create')
-         entry = await entriesStore.create(req.body.entryKey, req.body.day, req.body.title, req.body.body)
-        else
-            entry = await entriesStore.update(req.body.entryKey, req.body.day, req.body.title, req.body.body)
+router.post('/save', entryValidations, async (req, res, next) => {
 
-        res.redirect('/diary_entries/view?key=' + req.body.entryKey)
-    } catch (err) {
-        next(err)
-    }
+    await entryController.save(req, res, next)
 })
 
 router.get('/viewAll', async (req, res, next) => {
     try{
-        let allEntries = await entriesStore.findAllDairyEntries()
+        let allEntries = await entryController.findAllDairyEntries()
 
-        res.render('view_all',
+        res.render('diary_entries/view_all',
             { browserTitle: 'View All page',
                      pageHeading: 'All Diary Entries',
                      styles : ['/stylesheets/style.css'],
@@ -50,18 +42,18 @@ router.get('/viewAll', async (req, res, next) => {
 router.get('/edit', async (req, res, next) => {
     try{
 
-        let entry = await entriesStore.read(req.query.key)
+        let entry = await entryController.read(req.query.id)
 
-        res.render('edit_entry', {
+        res.render('diary_entries/edit_entry', {
             isCreate: false,
             browserTitle: 'Edit Page',
             pageHeading: 'Edit an Entry',
             styles : ['/stylesheets/style.css'],
-            entryKey: entry.key,
+            _id: entry._id,
             entryDate: moment.utc(entry.date).format( 'YYYY-MM-DD'),
             entryTitle: entry.title,
-            entryNote: entry.notes
-
+            entryNote: entry.notes,
+            maxDate: moment(new Date()).format( 'YYYY-MM-DD')
         })
     } catch (err) {
         next(err)
@@ -70,12 +62,12 @@ router.get('/edit', async (req, res, next) => {
 
 router.get('/view', async (req, res, next) => {
     try{
-        let entry = await entriesStore.read(req.query.key)
-        res.render('view_entry', {
+        let entry = await entryController.read(req.query.id)
+        res.render('diary_entries/view_entry', {
             browserTitle: 'View Page',
             pageHeading: 'View an Entry',
             styles : ['/stylesheets/style.css'],
-            entryKey: entry.key,
+            _id: entry._id,
             entryDate: moment.utc(entry.date).format("YYYY MMM D (dddd)"),
             entryTitle: entry.title,
             entryNote: entry.notes
@@ -86,11 +78,7 @@ router.get('/view', async (req, res, next) => {
 })
 
 router.get('/delete', async (req, res, next) =>{
-    try{
-        await entriesStore.destroy(req.query.key)
-        res.redirect('/diary_entries/viewAll')
-    } catch (err) {
-        next(err)
-    }
+
+    await entryController.destroy(req, res, next)
 })
 module.exports = router;

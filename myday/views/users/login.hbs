@@ -1,0 +1,13 @@
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <h2>Sign In</h2>
+    </div>
+</div>
+<div class="container-fluid m-2">
+    {{> user_messages}}
+</div>
+<form method="post", action="/users/login">
+    <div class="container-fluid">
+       {{> register_login }}
+    </div>
+</form>
