@@ -4,6 +4,24 @@ const {body, validationResult} = require('express-validator')
 
 exports.userController = {
 
+    register: async (req, res, next) => {
+
+        res.render('users/register', {
+            browserTitle: 'Sign Up Page',
+            pageHeading: 'Sign Up',
+            styles: ['/stylesheets/style.css'],
+            isRegisterActive: 'active'
+        })
+    },
+    login: async (req, res, next) => {
+
+        res.render('users/login', {
+            browserTitle: 'Login Page',
+            pageHeading: 'Login',
+            styles: ['/stylesheets/style.css'],
+            isLoginActive: 'active'
+        })
+    },
     create: async (req, res, next) => {
 
         const errors = validationResult(req)
