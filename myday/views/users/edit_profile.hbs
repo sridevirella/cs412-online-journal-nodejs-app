@@ -1,0 +1,109 @@
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <h2>Profile Information</h2>
+    </div>
+</div>
+<div class="container-fluid m-2">
+    {{> user_messages}}
+</div>
+<form method="post", action="/users/profile/save">
+    <div class="container-fluid">
+        <input type="hidden" name="saveMethod" value="{{#if isCreate}}create{{else}}update{{/if}}">
+
+        <div class="form-group row justify-content-center mb-0">
+            <div class="col-1 col-md-3"></div>
+            <div class="col-9 col-md-4 text-left font-weight-bold">
+                <label class="col-form-label" for="firstName">First Name</label>
+            </div>
+            <div class="col-1 col-md-3"></div>
+            <div class="col-9 col-md-4">
+                <input class="form-control" id="firstName" type="text" name="first" value="{{firstName}}" required/><br/>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center mb-0">
+            <div class="col-1 col-md-3"></div>
+            <div class="col-9 col-md-4 text-left font-weight-bold">
+                <label class="col-form-label" for="lastName">Last Name</label>
+            </div>
+            <div class="col-1 col-md-3"></div>
+            <div class="col-9 col-md-4">
+                <input class="form-control" id="lastName" type="text" name="last" value="{{lastName}}" required/><br/>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center mb-0">
+            <div class="col-1 col-md-3"></div>
+            <div class="col-9 col-md-4 text-left font-weight-bold">
+                <label class="col-form-label" for="email">Email</label>
+            </div>
+            <div class="col-1 col-md-3"></div>
+            <div class="col-9 col-md-4">
+                <input class="form-control" id="email" type="email" name="email" value="{{email}}" required readonly/><br/>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center mt-3">
+            <div class="row">
+                <div class="col-xs-6">
+                    <a class="btn btn-dark col-auto mr-5" data-toggle="modal" data-target="#modalPassword">Change Password</a>
+                </div>
+                <div class="col-xs-6">
+                    <input class="pl-3 pr-3 pb-2 pt-2 ml-5" type="submit" value="save">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+<form method="post", action="/users/profile/changePassword">
+    <div class="container-fluid">
+        <div class="modal fade" id="modalPassword" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Change Password</h4>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="form-group row justify-content-center mb-0">
+                            <div class="col-1 col-md-3"></div>
+                            <div class="col-9 col-md-4 text-left font-weight-bold">
+                                <label class="col-form-label" for="oldPassword">Old Password</label>
+                            </div>
+                            <div class="col-1 col-md-3"></div>
+                            <div class="col-9 col-md-4">
+                                <input class="form-control" id="oldPassword" type="password" name="oldPassword"/><br/>
+                            </div>
+                        </div>
+
+                    <div class="form-group row justify-content-center mb-0">
+                        <div class="col-1 col-md-3"></div>
+                        <div class="col-9 col-md-4 text-left font-weight-bold">
+                            <label class="col-form-label" for="newPassword">new Password</label>
+                        </div>
+                        <div class="col-1 col-md-3"></div>
+                        <div class="col-9 col-md-4">
+                            <input class="form-control" id="newPassword" type="password" name="newPassword"/><br/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row justify-content-center mt-3 mb-5">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <button class="btn btn-primary col-auto mr-5" type="submit">Save Password</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-danger pl-3 pr-3 pb-2 pt-2 ml-5" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+             </div>
+          </div>
+        </div>
+    </div>
+</form>

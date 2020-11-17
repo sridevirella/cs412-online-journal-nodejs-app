@@ -1,70 +1,96 @@
 let DiaryEntry = require('../models/diary_entries').DiaryEntry
 let moment = require('moment')
+let {User} = require('../models/user')
 const {body, validationResult} = require('express-validator')
 
 exports.entryController = {
 
     add: async (req, res, next) => {
-        try{
-            res.render('diary_entries/add_entry',{
-                isCreate: true,
-                browserTitle: 'Add Page',
-                pageHeading: 'Add An Entry',
-                styles : ['/stylesheets/style.css'],
-                isAddActive: 'active',
-                maxDate: moment(new Date()).format( 'YYYY-MM-DD')
-            })
-        } catch (err) {
-            next(err)
-          }
-        },
+        if (req.isAuthenticated()) {
+            try {
+                res.render('diary_entries/add_entry', {
+                    isCreate: true,
+                    browserTitle: 'Add Page',
+                    pageHeading: 'Add An Entry',
+                    styles: ['/stylesheets/style.css'],
+                    isAddActive: 'active',
+                    maxDate: moment(new Date()).format('YYYY-MM-DD')
+                })
+            } catch (err) {
+                next(err)
+            }
+        } else {
+            req.flash('error', 'Please log in to access Diary')
+            res.redirect('/users/login')
+        }
+    },
     viewAll: async (req, res, next) => {
-        try{
-            let allEntries = await findAllDairyEntries()
 
-            res.render('diary_entries/view_all',
-                { browserTitle: 'View All page',
-                    pageHeading: 'All Diary Entries',
-                    styles : ['/stylesheets/style.css'],
-                    isViewAllActive: 'active',
-                    entryList: allEntries})
-        } catch (err) {
-            next(err)
+        if(req.isAuthenticated()) {
+            try {
+                let entryIds = req.user.entries
+                console.log('user entry Ids:', entryIds)
+                let allEntries = await findAllDairyEntries(entryIds)
+
+                res.render('diary_entries/view_all',
+                    {
+                        browserTitle: 'View All page',
+                        pageHeading: 'All Diary Entries',
+                        styles: ['/stylesheets/style.css'],
+                        isViewAllActive: 'active',
+                        entryList: allEntries
+                    })
+            } catch (err) {
+                next(err)
+            }
+        } else {
+            req.flash('error', 'Please log in to access Diary')
+            res.redirect('/users/login')
         }
     },
     edit: async (req, res, next) => {
-        try{
-            let entry = await read(req.query.id)
+        if(req.isAuthenticated()) {
+            try {
+                let entry = await read(req.query.id)
 
-            res.render('diary_entries/edit_entry', {
-                isCreate: false,
-                browserTitle: 'Edit Page',
-                pageHeading: 'Edit an Entry',
-                styles : ['/stylesheets/style.css'],
-                _id: entry._id,
-                entryDate: moment.utc(entry.date).format( 'YYYY-MM-DD'),
-                entryTitle: entry.title,
-                entryNote: entry.notes,
-                maxDate: moment(new Date()).format( 'YYYY-MM-DD')
-            })
-        } catch (err) {
-            next(err)
+                res.render('diary_entries/edit_entry', {
+                    isCreate: false,
+                    browserTitle: 'Edit Page',
+                    pageHeading: 'Edit an Entry',
+                    styles: ['/stylesheets/style.css'],
+                    _id: entry._id,
+                    entryDate: moment.utc(entry.date).format('YYYY-MM-DD'),
+                    entryTitle: entry.title,
+                    entryNote: entry.notes,
+                    maxDate: moment(new Date()).format('YYYY-MM-DD')
+                })
+            } catch (err) {
+                next(err)
+            }
+        } else {
+            req.flash('error', 'Please log in to access Diary')
+            res.redirect('/users/login')
         }
     },
     view: async (req, res, next) => {
-        try{
-            let entry = await read(req.query.id)
-            res.render('diary_entries/view_entry', {
-                browserTitle: 'View Page',
-                pageHeading: 'View an Entry',
-                styles : ['/stylesheets/style.css'],
-                _id: entry._id,
-                entryDate: moment.utc(entry.date).format("YYYY MMM D (dddd)"),
-                entryTitle: entry.title,
-                entryNote: entry.notes
-            })
-        } catch (err) {
-            next(err)
+        if(req.isAuthenticated()) {
+            try {
+                let entry = await read(req.query.id.trim())
+                res.render('diary_entries/view_entry', {
+                    browserTitle: 'View Page',
+                    pageHeading: 'View an Entry',
+                    styles: ['/stylesheets/style.css'],
+                    _id: entry._id,
+                    entryDate: moment.utc(entry.date).format("YYYY MMM D (dddd)"),
+                    entryTitle: entry.title,
+                    entryNote: entry.notes
+                })
+            } catch (err) {
+                next(err)
+            }
+        } else {
+            req.flash('error', 'Please log in to access Diary')
+            res.redirect('/users/login')
         }
     },
     save: async(req, res, next) => {
@@ -77,9 +103,13 @@ exports.entryController = {
     destroy: async(req, res, next) => {
 
         try {
-             let entry = await DiaryEntry.findOneAndDelete({_id: req.query.id})
-             req.flash('success', `${entry.title} diary entry deleted successfully`)
-             res.redirect('/diary_entries/viewAll')
+             let entry = await DiaryEntry.findOneAndDelete({_id: req.query.id.trim()})
+
+            req.user.entries.pull(entry.id.trim())
+            req.user = await User.findByIdAndUpdate({_id: req.user.id.trim()}, {entries: req.user.entries}, {new: true})
+
+            req.flash('success', `Title:${entry.title} diary entry deleted successfully`)
+            res.redirect('/diary_entries/viewAll')
 
         }catch (err) {
             console.log(`Error deleting Diary Entry ${err.message}`)
@@ -97,15 +127,18 @@ const read = async (id) => {
         return entry
 }
 
-const findAllDairyEntries = async () => {
+const findAllDairyEntries = async (entryIds) => {
 
-    const entries = await DiaryEntry.find({})
+    let entryPromises = entryIds.map(id => DiaryEntry.findOne({_id: id}))
+    const entries = await Promise.all(entryPromises)
+     console.log("entries::",entries)
         return entries.map(entry => {
-            return {
-                _id: entry._id,
-                date: moment.utc(entry.date).format("YYYY MMM D (dddd)"),
-                title: entry.title
-            }
+
+                return {
+                    _id: entry._id,
+                    date: moment.utc(entry.date).format("YYYY MMM D (dddd)"),
+                    title: entry.title
+                }
         })
 }
 
@@ -122,6 +155,8 @@ const create = async (req, res, next) => {
             let entryParams = getEntryParams(req.body)
             let entry = new DiaryEntry(entryParams)
             await entry.save()
+            req.user.entries.push(entry.id.trim())
+            req.user = await User.findByIdAndUpdate({_id: req.user.id.trim()}, {entries: req.user.entries}, {new: true})
 
             req.flash('success', `Title:${entry.title}, diary entry added successfully`)
             res.redirect('/diary_entries/view?id=' + entry._id)

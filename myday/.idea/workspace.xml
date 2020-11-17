@@ -3,11 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="3cff09c8-3da7-4df9-bdbd-52650b857efe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/entries_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/entries_controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/user_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/diary_entries.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/diary_entries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/diary_entries/view_all.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/diary_entries/view_all.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/partials/delete_modal.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/delete_modal.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/header.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/users/register.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/register.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,21 +46,22 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Users\Sri\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.6948.73\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\public\assets\stylesheets" />
+      <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\views" />
+      <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\public\images" />
+      <recent name="E:\NEIU\FALL_2020\412\expressproject\myday\public\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\views\partials" />
       <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\views\diary_entries" />
       <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\views\diary" />
       <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\public\assets" />
       <recent name="E:\NEIU\FALL_2020\412\expressproject\myday\views\layouts" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\public\assets\stylesheets" />
-      <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\views" />
-      <recent name="E:\NEIU\FALL_2020\412\project\neiu-cs-412\myday\public\images" />
-      <recent name="E:\NEIU\FALL_2020\412\expressproject\myday\public\images" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start-watch">
@@ -116,7 +123,9 @@
       <workItem from="1605022999416" duration="39919000" />
       <workItem from="1605076617231" duration="3247000" />
       <workItem from="1605110768406" duration="4400000" />
-      <workItem from="1605132391602" duration="4326000" />
+      <workItem from="1605132391602" duration="4508000" />
+      <workItem from="1605543360911" duration="49365000" />
+      <workItem from="1605638304684" duration="4885000" />
     </task>
     <task id="LOCAL-00001" summary="Express,HandleBars - HW08">
       <created>1603293744504</created>
@@ -160,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605113751560</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="routers code clean - data storage HomeWork11">
+      <created>1605143787325</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1605143787325</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +187,8 @@
     <MESSAGE value="Bootstrap - HW09" />
     <MESSAGE value="persistent memory HomeWork10" />
     <MESSAGE value="persistent memory/data storage HomeWork11" />
-    <option name="LAST_COMMIT_MESSAGE" value="persistent memory/data storage HomeWork11" />
+    <MESSAGE value="routers code clean - data storage HomeWork11" />
+    <option name="LAST_COMMIT_MESSAGE" value="routers code clean - data storage HomeWork11" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605114084666">
@@ -186,10 +203,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1604821253742" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1605113746171">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1605143785728">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1605113746171" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1605143785728" />
     <state x="147" y="54" width="1092" height="611" key="DiffContextDialog" timestamp="1604551352198">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -202,22 +219,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602629424174" />
-    <state width="1345" height="61" key="GridCell.Tab.0.bottom" timestamp="1605143216703">
+    <state width="1345" height="62" key="GridCell.Tab.0.bottom" timestamp="1605640780510">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="61" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605143216703" />
-    <state width="1345" height="61" key="GridCell.Tab.0.center" timestamp="1605143216702">
+    <state width="1345" height="62" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605640780510" />
+    <state width="1345" height="62" key="GridCell.Tab.0.center" timestamp="1605640780510">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="61" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605143216702" />
-    <state width="1345" height="61" key="GridCell.Tab.0.left" timestamp="1605143216702">
+    <state width="1345" height="62" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605640780510" />
+    <state width="1345" height="62" key="GridCell.Tab.0.left" timestamp="1605640780510">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="61" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605143216702" />
-    <state width="1345" height="61" key="GridCell.Tab.0.right" timestamp="1605143216703">
+    <state width="1345" height="62" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605640780510" />
+    <state width="1345" height="62" key="GridCell.Tab.0.right" timestamp="1605640780510">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="61" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605143216703" />
+    <state width="1345" height="62" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605640780510" />
     <state x="129" y="55" key="MergeDialog" timestamp="1604551281114">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -226,10 +243,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1604551330556" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1605113767227">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1605143816826">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605113767227" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605143816826" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1605641574129">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1605641574129" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604470442038">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

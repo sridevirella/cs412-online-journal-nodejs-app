@@ -6,8 +6,9 @@
 <div class="container-fluid m-2">
     {{> user_messages}}
 </div>
-<form method="post", action="/users/register">
+<form method="post", action="/users/save">
     <div class="container-fluid">
+        <input type="hidden" name="saveMethod" value="{{#if isCreate}}create{{else}}update{{/if}}">
 
         <div class="form-group row justify-content-center mb-0">
             <div class="col-1 col-md-3"></div>
