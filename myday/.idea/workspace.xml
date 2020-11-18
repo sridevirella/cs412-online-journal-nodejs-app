@@ -3,17 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3cff09c8-3da7-4df9-bdbd-52650b857efe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/entries_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/entries_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/user_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/diary_entries/view_all.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/diary_entries/view_all.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/delete_modal.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/delete_modal.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/partials/header.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/users/register.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/register.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/profile.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/register_login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/register_login.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +117,8 @@
       <workItem from="1605110768406" duration="4400000" />
       <workItem from="1605132391602" duration="4508000" />
       <workItem from="1605543360911" duration="49365000" />
-      <workItem from="1605638304684" duration="4885000" />
+      <workItem from="1605638304684" duration="6956000" />
+      <workItem from="1605724272395" duration="412000" />
     </task>
     <task id="LOCAL-00001" summary="Express,HandleBars - HW08">
       <created>1603293744504</created>
@@ -176,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605143787325</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Passport auth/authentication HomeWork12">
+      <created>1605644658479</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605644658479</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +188,8 @@
     <MESSAGE value="persistent memory HomeWork10" />
     <MESSAGE value="persistent memory/data storage HomeWork11" />
     <MESSAGE value="routers code clean - data storage HomeWork11" />
-    <option name="LAST_COMMIT_MESSAGE" value="routers code clean - data storage HomeWork11" />
+    <MESSAGE value="Passport auth/authentication HomeWork12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Passport auth/authentication HomeWork12" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605114084666">
@@ -203,10 +204,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1604821253742" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1605143785728">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1605644656185">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1605143785728" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1605644656185" />
     <state x="147" y="54" width="1092" height="611" key="DiffContextDialog" timestamp="1604551352198">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -219,22 +220,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602629424174" />
-    <state width="1345" height="62" key="GridCell.Tab.0.bottom" timestamp="1605640780510">
+    <state width="1345" height="47" key="GridCell.Tab.0.bottom" timestamp="1605724453900">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="62" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605640780510" />
-    <state width="1345" height="62" key="GridCell.Tab.0.center" timestamp="1605640780510">
+    <state width="1345" height="47" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605724453900" />
+    <state width="1345" height="47" key="GridCell.Tab.0.center" timestamp="1605724453900">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="62" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605640780510" />
-    <state width="1345" height="62" key="GridCell.Tab.0.left" timestamp="1605640780510">
+    <state width="1345" height="47" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605724453900" />
+    <state width="1345" height="47" key="GridCell.Tab.0.left" timestamp="1605724453900">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="62" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605640780510" />
-    <state width="1345" height="62" key="GridCell.Tab.0.right" timestamp="1605640780510">
+    <state width="1345" height="47" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605724453900" />
+    <state width="1345" height="47" key="GridCell.Tab.0.right" timestamp="1605724453900">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="62" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605640780510" />
+    <state width="1345" height="47" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605724453900" />
     <state x="129" y="55" key="MergeDialog" timestamp="1604551281114">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -243,10 +244,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1604551330556" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1605143816826">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1605644679837">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605143816826" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605644679837" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1605641574129">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
