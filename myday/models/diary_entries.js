@@ -16,5 +16,5 @@ const DiaryEntrySchema = new mongoose.Schema({
         required: [true, 'Note body is required']
     }
 })
-
+DiaryEntrySchema.index({ title: 'text'})
 exports.DiaryEntry = mongoose.model('diaryentries', DiaryEntrySchema)

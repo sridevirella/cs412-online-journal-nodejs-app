@@ -23,6 +23,7 @@
     "memorystore": "^1.6.4",
     "moment": "^2.29.1",
     "mongoose": "^5.10.11",
+    "mongoose-gridfs": "^1.2.48",
     "morgan": "~1.9.1",
     "passport": "^0.4.1",
     "passport-local-mongoose": "^6.0.1",

@@ -117,6 +117,50 @@ exports.entryController = {
             res.redirect('/diary_entries/viewAll')
         }
     },
+    search: async (req, res, next) => {
+        if(req.isAuthenticated()) {
+
+            res.render('diary_entries/search_entries', {
+                browserTitle: 'Search Entries Page',
+                pageHeading: 'Search Diary Entries',
+                styles: ['/stylesheets/style.css'],
+                isSearchActive: 'active',
+                maxDate: moment(new Date()).format('YYYY-MM-DD')
+            })
+        } else {
+            req.flash('error', 'Please log in to search diary entries')
+            res.redirect('/users/login')
+        }
+    },
+    find: async (req, res, next) => {
+
+        const errors = validationResult(req)
+
+        if(!errors.isEmpty()) {
+            req.flash('error', errors.array().map(e => e.msg + '</br>').join(''))
+            res.redirect('/diary_entries/search')
+
+        } else {
+            try {
+                let matchedEntries = await titleDateSearch(req)
+
+                res.render('diary_entries/search_entries',
+                    {
+                        browserTitle: 'Search Entries Page',
+                        pageHeading: 'Search Diary Entries',
+                        styles: ['/stylesheets/style.css'],
+                        isSearchActive: 'active',
+                        entryList: matchedEntries
+                    })
+
+            }catch (err) {
+
+                console.log(`Error retrieving Diary Entries for the word`)
+                req.flash('error', `Failed retrieving Diary Entries for the word ${err.message}`)
+                res.redirect('/diary_entries/search')
+            }
+        }
+    },
     count: async() => {
         return await DiaryEntry.findAllDairyEntries().count()
     }
@@ -131,7 +175,7 @@ const findAllDairyEntries = async (entryIds) => {
 
     let entryPromises = entryIds.map(id => DiaryEntry.findOne({_id: id}))
     const entries = await Promise.all(entryPromises)
-     console.log("entries::",entries)
+
         return entries.map(entry => {
 
                 return {
@@ -140,6 +184,32 @@ const findAllDairyEntries = async (entryIds) => {
                     title: entry.title
                 }
         })
+}
+
+const titleDateSearch = async (req) => {
+
+    let allMatched
+
+    if(req.body.searchWord !== null && req.body.searchDate === "") {
+
+        let resultEntries =  await DiaryEntry.find({$text: {$search: req.body.searchWord}})
+        allMatched = await resultEntries.filter(entry => req.user.entries.some( id => id.equals(entry._id)));
+        req.flash('success', `Diary entries for the word ${req.body.searchWord} retrieved successfully`)
+    }
+    else if(req.body.searchWord === "" && req.body.searchDate !== null) {
+
+        let finalDate = req.body.searchDate + "T00:00:00.000+00:00";
+        allMatched = await DiaryEntry.find({date: finalDate})
+        req.flash('success', `Diary entries for the date ${req.body.searchDate} retrieved successfully`)
+    }
+
+    return allMatched.map(entry => {
+        return {
+            _id: entry._id,
+            date: moment.utc(entry.date).format("YYYY MMM D (dddd)"),
+            title: entry.title
+        }
+    })
 }
 
 const create = async (req, res, next) => {

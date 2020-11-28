@@ -39,7 +39,7 @@ exports.userController = {
                 res.render('users/edit_profile', {
                     isCreate: false,
                     browserTitle: 'Profile Page',
-                    pageHeading: 'Profile Info',
+                    pageHeading: 'Profile Information',
                     styles: ['/stylesheets/style.css'],
                     isProfileActive: 'active',
                     firstName: user.name.first,

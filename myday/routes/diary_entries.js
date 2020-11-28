@@ -26,4 +26,13 @@ router.get('/view', async (req, res, next) => {
 router.get('/delete', async (req, res, next) =>{
     await entryController.destroy(req, res, next)
 })
+
+router.get('/search', async (req, res, next) =>{
+    await entryController.search(req, res, next)
+})
+
+router.post('/search/find', async (req, res, next) =>{
+    await entryController.find(req, res, next)
+})
+
 module.exports = router;
