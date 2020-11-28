@@ -120,7 +120,7 @@ exports.entryController = {
     search: async (req, res, next) => {
         if(req.isAuthenticated()) {
 
-            res.render('diary_entries/search_entries', {
+            res.render('diary_entries/search_diary_entries', {
                 browserTitle: 'Search Entries Page',
                 pageHeading: 'Search Diary Entries',
                 styles: ['/stylesheets/style.css'],
@@ -144,7 +144,7 @@ exports.entryController = {
             try {
                 let matchedEntries = await titleDateSearch(req)
 
-                res.render('diary_entries/search_entries',
+                res.render('diary_entries/search_diary_entries',
                     {
                         browserTitle: 'Search Entries Page',
                         pageHeading: 'Search Diary Entries',

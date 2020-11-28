@@ -4,15 +4,6 @@
     <list default="true" id="3cff09c8-3da7-4df9-bdbd-52650b857efe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/entries_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/entries_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/user_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/diary_entries.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/diary_entries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/diary_entries.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/diary_entries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/diary_entries/view_all.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/diary_entries/view_all.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/diary_entries/view_entry.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/diary_entries/view_entry.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/header.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/users/edit_profile.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/edit_profile.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +119,8 @@
       <workItem from="1605724272395" duration="12443000" />
       <workItem from="1606152650841" duration="136000" />
       <workItem from="1606153696893" duration="693000" />
-      <workItem from="1606502619947" duration="30629000" />
+      <workItem from="1606502619947" duration="30758000" />
+      <workItem from="1606538613677" duration="279000" />
     </task>
     <task id="LOCAL-00001" summary="Express,HandleBars - HW08">
       <created>1603293744504</created>
@@ -193,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605724939670</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Search functionality">
+      <created>1606538201614</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606538201614</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +206,8 @@
     <MESSAGE value="routers code clean - data storage HomeWork11" />
     <MESSAGE value="Passport auth/authentication HomeWork12" />
     <MESSAGE value="Passport auth/authentication - updated partials" />
-    <option name="LAST_COMMIT_MESSAGE" value="Passport auth/authentication - updated partials" />
+    <MESSAGE value="Added Search functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Search functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605114084666">
@@ -222,10 +222,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1604821253742" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1605724938423">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1606538199673">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1605724938423" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606538199673" />
     <state x="147" y="54" width="1092" height="611" key="DiffContextDialog" timestamp="1604551352198">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -238,22 +238,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602629424174" />
-    <state width="1345" height="195" key="GridCell.Tab.0.bottom" timestamp="1606537066921">
+    <state width="1345" height="111" key="GridCell.Tab.0.bottom" timestamp="1606538283303">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="195" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606537066921" />
-    <state width="1345" height="195" key="GridCell.Tab.0.center" timestamp="1606537066921">
+    <state width="1345" height="111" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606538283303" />
+    <state width="1345" height="111" key="GridCell.Tab.0.center" timestamp="1606538283303">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="195" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606537066921" />
-    <state width="1345" height="195" key="GridCell.Tab.0.left" timestamp="1606537066921">
+    <state width="1345" height="111" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606538283303" />
+    <state width="1345" height="111" key="GridCell.Tab.0.left" timestamp="1606538283303">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="195" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606537066921" />
-    <state width="1345" height="195" key="GridCell.Tab.0.right" timestamp="1606537066921">
+    <state width="1345" height="111" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606538283303" />
+    <state width="1345" height="111" key="GridCell.Tab.0.right" timestamp="1606538283303">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="195" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606537066921" />
+    <state width="1345" height="111" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606538283303" />
     <state x="129" y="55" key="MergeDialog" timestamp="1604551281114">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -262,10 +262,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1604551330556" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1605724955354">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1606538208813">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605724955354" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606538208813" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1605641574129">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
