@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark border">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light border">
         <a class="navbar-brand" href="/"><i data-feather="home"></i></a>
         <button class="navbar-toggler" type="button"
                 data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -8,18 +8,26 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <span class="navbar-text col text-left">{{pageHeading}}</span>
+            <span class="navbar-text col text-left appHeading">MyDay</span>
             {{#unless loggedIn}}
-                <a class="mr-4 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isRegisterActive}}" href="/users/register">SignUp</a>
-                <a class="mr-4 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isLoginActive}}" href="/users/login">Login</a>
+                <a class="mr-2 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isRegisterActive}}"
+                   href="/users/register">Sign Up</a>
+                <a class="mr-2 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isLoginActive}}"
+                   href="/users/login">Login</a>
             {{else}}
-                <a class="mr-4 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isAddActive}}" href="/diary_entries/add">Add Entry</a>
-                <a class="mr-4 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isViewAllActive}}" href="/diary_entries/viewAll">View Entries</a>
-                <a class="mr-4 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isSearchActive}}" href="/diary_entries/search">Search<i data-feather="search"></i></a>
+                <a class="mr-2 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isAddActive}}"
+                   href="/diary_entries/add">Add Entry</a>
+                <a class="mr-2 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isViewAllActive}}"
+                   href="/diary_entries/viewAll">View Entries</a>
+                <a class="mr-2 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isSearchActive}}"
+                   href="/diary_entries/search"><i data-feather="search"></i>Search</a>
 
                 <div class="btn-group">
-                    <button type="button" class="nav-item nav-link btn btn-light col-auto"><i data-feather="user"></i>{{currentUser.fullName}}</button>
-                    <button type="button" class="nav-item nav-link btn btn-light dropdown-toggle dropdown-toggle-split col-auto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="nav-item nav-link btn btn-light col-auto"><i
+                            data-feather="user"></i>{{currentUser.fullName}}</button>
+                    <button type="button"
+                            class="nav-item nav-link btn btn-light dropdown-toggle dropdown-toggle-split col-auto"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">

@@ -1,42 +1,32 @@
-<div class="container-fluid mt-5 mb-5">
-    <div class="row justify-content-center">
-        <img src="/assets/images/viewAll.png" alt="view icon"/>
-    </div>
-</div>
-<div class="container-fluid m-2">
-    {{> user_messages}}
-</div>
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="btn-group-vertical" role="group">
-            <table class="table table-hover">
-                <thead class="thead-dark">
-                <tr >
-                    <th>Date</th>
-                    <th>Title</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-
-                <tbody>
+<div class="container-fluid py-3">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="d-flex flex-column flex-nowrap">
                 {{#each entryList}}
-                    <tr class="clickable-table" >
-                    <td>{{ date }}</td>
-                    <td>{{ title }}</td>
-                    <td>
-                        <a class="each-item mr-1" href="/diary_entries/view?id={{ _id }}"><i class="eye btn-outline-info" data-feather="eye"></i></a>
-                        <a class="each-item mr-1" href="/diary_entries/edit?id={{ _id }}"><i class="edit btn-outline-info" data-feather="edit"></i></a>
-                        <a class="each-item mr-1" ><i class="delete btn-outline-info" data-feather="x-square" data-toggle="modal" data-target="#myModal"> </i></a>
-                        {{> delete_modal }}
-                    </td>
-                    </tr>
-                {{/each}}
-                </tbody>
+                    <div class="card card-body view-all-card emphasize-dark">
+                        <div class="card-columns bg-custom">
+                            <p></p>
+                        </div>
 
-            </table>
+                        <div class="col-form-label"><span><strong>Date|&nbsp;&nbsp;</strong> </span>
+                            <span>{{ date }}</span>
+                        </div>
+                        <div class="col-form-label"><span><strong>Title|&nbsp;&nbsp;</strong></span>
+                            <span>{{ title }}</span>
+                        </div>
+                        <div class="view-options">
+                            <span><a class="each-item mr-1" href="/diary_entries/view?id={{ _id }}"><i class="eye"
+                                                                                                       data-feather="eye"></i></span>
+                            <span> <a class="each-item mr-1" href="/diary_entries/edit?id={{ _id }}"><i class="edit"
+                                                                                                        data-feather="edit"></i></span>
+                            <span><a class="each-item mr-1"><i class="delete" data-feather="x-square"
+                                                               data-toggle="modal"
+                                                               data-target="#myModal"> </i></a></span>
+                            {{> delete_modal }}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
         </div>
     </div>
 </div>
-
-
-

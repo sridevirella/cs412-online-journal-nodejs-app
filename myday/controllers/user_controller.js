@@ -1,7 +1,10 @@
-const bcrypt = require("bcrypt");
 let User = require('../models/user').User
 const {body, validationResult} = require('express-validator')
+const EncryptorDecrypt = require("encrypt_decrypt")
+const bcrypt = require('bcrypt')
 const passport = require('passport')
+
+let encryptDecryptObj = new EncryptorDecrypt()
 
 exports.userController = {
 
@@ -10,7 +13,7 @@ exports.userController = {
         res.render('users/register', {
             isCreate: true,
             browserTitle: 'Sign Up Page',
-            pageHeading: 'Sign Up',
+            pageHeading: 'Let\'s Create Your account',
             styles: ['/stylesheets/style.css'],
             isRegisterActive: 'active'
         })
@@ -44,7 +47,7 @@ exports.userController = {
                     isProfileActive: 'active',
                     firstName: user.name.first,
                     lastName: user.name.last,
-                    email: user.email
+                    email: encryptDecryptObj.decrypt(user.email)
                 })
             } catch (err) {
                 next(err)
@@ -56,7 +59,10 @@ exports.userController = {
     },
     authenticate: async (req, res, next) => {
 
-        await passport.authenticate('local', function (err, user, info){
+         req.body.email = encryptDecryptObj.encrypt(req.body.email)
+
+        await passport.authenticate('local', async function (err, user, info){
+
             if(err)
                 return next(err)
             if(!user) {
@@ -66,8 +72,9 @@ exports.userController = {
             req.login(user, function (err) {
                 if(err)
                     return next(err)
+
                 req.flash('success', `${user.fullName} logged in`)
-                return res.redirect('/')
+                return res.redirect('/diary_entries/add')
             })
         })(req, res, next)
     },
@@ -77,6 +84,7 @@ exports.userController = {
 
             let user = await User.findOne({email: req.user.email})
             await user.changePassword (req.body.oldPassword, req.body.newPassword, function(err) {
+
                 if(err) {
                     if(err.name === 'IncorrectPasswordError') {
                         req.flash('error', 'Incorrect old password')
@@ -116,6 +124,8 @@ const create = async (req, res, next) => {
 
     } else {
         try {
+            req.body.email = await encryptDecryptObj.encrypt(req.body.email)
+
             let userParams = getUserParams(req.body)
             let newUser = new User(userParams)
             let user = await User.register(newUser, req.body.password)
@@ -132,9 +142,10 @@ const create = async (req, res, next) => {
     }
 }
 
+
 const update = async (req, res, next) => {
 
-    const errors = validationResult(req)
+   const errors = validationResult(req)
 
     if(!errors.isEmpty()) {
         req.flash('error', errors.array().map(e => e.msg + '</br>').join(''))
@@ -144,7 +155,7 @@ const update = async (req, res, next) => {
         try {
             let userParams = getUserParams(req.body)
 
-            let user = await User.findOneAndUpdate({email: userParams.email}, {
+            let user = await User.findOneAndUpdate({email: encryptDecryptObj.encrypt(userParams.email)}, {
                 name: userParams.name
             })
 

@@ -1,8 +1,78 @@
-<div class="container-fluid mt-5">
-    <div class="row justify-content-center">
-        <img class="border border-dark rounded" src="/assets/images/journal.jpg" alt="journal image"/>
+<strong>{{> user_messages}}</strong>
+
+<div class="row">
+    <div class="col-md-6" style="min-height: 200px;">
+        <div class="col-md-12" style="float:left">
+            <div class="card mt-5" id="homeText">
+                <div class="card-body">
+                    <div>
+                        <div>
+                            <div class="sliderText">Online Journal<br>
+                                <p class="homeInnerText"> End Your Day By Self Preserving <br> Your Thoughts And
+                                    Memories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div class="container-fluid m-2">
-    {{> user_messages}}
+    <div class="col-md-6 justify-content-center">
+        <div id="ImageCarouse" class="carousel slide" data-ride="carousel" data-interval="3500">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="col-md-12" style="float:left">
+                        <div class="card mb-2 bg-dark">
+                            <img class="card-img-top img-responsive"
+                                 src="/assets/images/chicago2.jpg" alt="Chicago1 image">
+                            <div class="card-body">
+                                <h4 class="card-title">Day One In Chicago Downtown</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="col-md-12" style="float:left">
+                        <div class="card mb-2 bg-dark">
+                            <img class="card-img-top img-responsive"
+                                 src="/assets/images/chicago3.jpg" alt="Chicago1 image">
+                            <div class="card-body">
+                                <h4 class="card-title">Day Two In Chicago Downtown</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="col-md-12" style="float:left">
+                        <div class="card mb-2 bg-dark">
+                            <img class="card-img-top img-responsive"
+                                 src="/assets/images/snow.jpg" alt="Chicago1 image">
+                            <div class="card-body">
+                                <h4 class="card-title">First Snowfall Of The Season!!</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="col-md-12" style="float:left">
+                        <div class="card mb-2 bg-dark">
+                            <img class="card-img-top img-responsive"
+                                 src="/assets/images/rain.jpg" alt="Chicago1 image">
+                            <div class="card-body">
+                                <h4 class="card-title">Let It Rain!!!...</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#ImageCarouse" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#ImageCarouse" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 </div>

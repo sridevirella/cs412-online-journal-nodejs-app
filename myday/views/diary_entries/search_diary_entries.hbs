@@ -1,61 +1,62 @@
-<div class="container-fluid m-2">
-    {{> user_messages}}
-</div>
-<form method="post", action="/diary_entries/search/find">
-    <div class="container-fluid mt-4">
-        <div class="form-group row justify-content-center mb-0">
-            <div class="col-1 col-md-3"></div>
-            <div class="col-9 col-md-4 text-left font-weight-bold">
+<strong>{{> user_messages}}</strong>
+
+<form method="post" action="/diary_entries/search/find">
+    <div class="container">
+        <div class="row justify-content-center mt-3">
+            <div class="col-4">
+                <input class="form-check-input" id="searchWordRadio" type="radio" name="gridRadios">
                 <label class="col-form-label" for="search">Search By Title</label>
+                <br>
+                <input class="form-check-input" id="searchDateRadio" type="radio" name="gridRadios">
+                <label class="col-form-label" for="searchDate">Select By Date</label>
+                <br>
+                <input class="form-check-input" type="radio" name="gridRadios" id="searchByFavorite">
+                <label class="col-form-label" for="favorite">Select By Favorites</label>
             </div>
-            <div class="col-1 col-md-3"></div>
-            <div class="col-9 col-md-4">
-                <div class="input-group">
+            <div class="col-4">
+                <div class="input-group-append" id="searchWord">
                     <input type="text" class="form-control" name="searchWord" placeholder="Search Entries">
-                    <div class="input-group-append">
-                        <button class="btn btn-dark" type="submit">
-                            <i data-feather="search"></i>
-                        </button>
-                    </div>
+                    <button class="btn btn-dark" type="submit">
+                        <i data-feather="search"></i>
+                    </button>
+                </div>
+                <div class="input-group-append" id="searchDate">
+                    <input class="form-control" type="date" name="searchDate" max={{maxDate}}>
+                    <button class="btn btn-dark" type="submit">
+                        <i data-feather="search"></i>
+                    </button>
+                </div>
+                <div class="input-group-append" id="heartIcon">
+                    <input type="checkbox" class="form-check-input" id="search-checkbox" name="imp">
+                    <i data-feather="heart"></i>
+                    <button class="btn btn-dark" type="submit">
+                        <i data-feather="search"></i>
+                    </button>
                 </div>
             </div>
         </div>
-
-        <div class="form-group row justify-content-center mb-0">
-            <div class="col-1 col-md-3"></div>
-            <div class="col-9 col-md-4 text-left font-weight-bold">
-                <label class="col-form-label" for="searchDate">Select By Date</label>
-            </div>
-            <div class="col-1 col-md-3"></div>
-            <div class="col-9 col-md-4">
-                <input class="form-control border border-dark" type="date" name="searchDate" max={{maxDate}}>
-            </div>
-        </div>
-
-    </div>
     </div>
 </form>
 
-<div class="container-fluid mt-4">
-    <div class="row justify-content-center">
-        <div class="btn-group-vertical" role="group">
-            <table class="table table-hover">
-                <thead class="thead-dark">
-                <tr>
-                    <th>Date</th>
-                    <th>Title</th>
-                </tr>
-                </thead>
-
-                <tbody>
-                {{#each entryList}}
-                    <tr class="clickable-table" onclick="window.location='/diary_entries/view?id={{ _id }}'">
-                    <td>{{ date }}</td>
-                    <td>{{ title }}</td>
-                    </tr>
-                {{/each}}
-                </tbody>
-            </table>
+<div class="container-fluid py-3">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+        <div class="d-flex flex-column flex-nowrap">
+            {{#each entryList}}
+                <div class="card view-all-card emphasize-dark">
+                    <div class="card-body clickable-table" onclick="window.location='/diary_entries/view?id={{ _id }}'">
+                    <div class="card-columns card-column-color-search">
+                        <p></p>
+                    </div>
+                    <div class="col-form-label"><span><strong>Date|&nbsp;&nbsp;</strong> </span>
+                        <span>{{ date }}</span>
+                    </div>
+                    <div class="col-form-label"><span><strong>Title|&nbsp;&nbsp;</strong></span>
+                        <span>{{ title }}</span>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
         </div>
     </div>
 </div>

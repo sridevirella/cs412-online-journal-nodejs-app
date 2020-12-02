@@ -1,13 +1,22 @@
-<div class="container-fluid mt-5">
-    <div class="row justify-content-center">
-        <h2>Sign In</h2>
+<strong>{{> user_messages}}</strong>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card border-secondary emphasize-dark">
+                        <div class="card-header">
+                            <h3 class="mb-0 my-2">{{pageHeading}}</h3>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" , action="/users/login" class="form" role="form">
+                                {{> register_login }}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<div class="container-fluid m-2">
-    {{> user_messages}}
-</div>
-<form method="post", action="/users/login">
-    <div class="container-fluid">
-       {{> register_login }}
-    </div>
-</form>

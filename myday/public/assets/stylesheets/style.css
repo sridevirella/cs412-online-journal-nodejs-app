@@ -1,12 +1,44 @@
 
 body {
   font: 14px Lato, "Montserrat", sans-serif;
+
 }
 
-.clickable-table {
-  cursor:pointer;
+.appHeading {
+  color: red !important;
+  text-align: center;
+  font-family: "Great Vibes";
+  font-weight: bolder;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 1px #fff;
+  font-size: 58px;
 }
 
+.carousel-inner{
+  width:100%;!important;
+  color: white;
+}
+
+#ImgCarouse {
+  display: contents;
+}
+
+.homeText {
+  border: 0;
+}
+
+#heartIcon, #search-checkbox,#favorite {
+  color:red;
+  width:30px;
+  height:30px;
+  display:none;
+}
+
+#addHeartIcon{
+  color:black;
+  width:30px;
+  height:30px;
+}
 .edit .eye {
   width:30px!important;
   height:30px!important;
@@ -25,7 +57,7 @@ body {
 }
 
 .btn-light:not(:disabled):not(.disabled).active {
-  background-color: #a6eef1;
+  background-color: #98FB98;
 }
 
 .navbar-text {
@@ -47,12 +79,75 @@ h1 {
   text-align: center;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  max-height: 200px;
-}
-
 .form-class {
   background-color: gainsboro;
+}
+
+#heart {
+  color: grey;
+  font-size: 30px;
+}
+
+#heart.red {
+  color: red;
+}
+
+#sticky-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.emphasize-dark {
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
+}
+
+.sliderText {
+  color: red;
+  font: 70px 'Museo700';
+}
+
+.homeInnerText {
+  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+  color: #9c8468;
+  opacity: 0.6;
+  font: 40px 'Museo700';
+}
+
+#flashMessage {
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  z-index: 999;
+  margin-bottom: 0px!important;
+}
+.card {
+  border: none;
+}
+
+.col-form-label {
+  font-size: 16px; !important;
+  font-weight: normal;
+}
+
+.clickable-table {
+  cursor:pointer;
+}
+
+.bg-custom {
+  background-color: #98FB98;
+}
+
+.view-all-card {
+  min-width: 200px;
+  margin-bottom: 9px;
+  padding-top: 0px; !important;
+}
+
+.view-options {
+  margin-left: auto;
+}
+
+.card-column-color-search {
+  background-color: #6495ED;
 }

@@ -14,6 +14,10 @@ const DiaryEntrySchema = new mongoose.Schema({
     notes: {
         type: String,
         required: [true, 'Note body is required']
+    },
+    favorite: {
+        type: String,
+        default: "off"
     }
 })
 DiaryEntrySchema.index({ title: 'text'})

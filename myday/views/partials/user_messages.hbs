@@ -1,9 +1,25 @@
-<div class="row justify-content-center m-2">
+<div class="">
     {{#if flashMessages}}
         {{#if flashMessages.success}}
-            <span class="text-success">{{{flashMessages.success}}}</span>
-        {{else}}
-            <span class="text-danger">{{{flashMessages.error}}}</span>
-        {{/if}}
+            <div class="container-fluid">
+                <div id="flashMessage" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <span class="text-success">{{{flashMessages.success}}}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+            </div>
+            {{else if  flashMessages.error}}
+                <div class="container-fluid m-2">
+                <div id="flashMessage" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <span class="text-danger">{{{flashMessages.error}}}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+            </div>
+    {{/if}}
+    {{else}}
+        <h1>it's info mode</h1>
     {{/if}}
 </div>

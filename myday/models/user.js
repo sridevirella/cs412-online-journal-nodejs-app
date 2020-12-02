@@ -31,7 +31,8 @@ UserSchema.plugin(passportLocalMongoose, {
 
 UserSchema.virtual('fullName').get(function () {
 
-     return `${this.name.first} ${this.name.last}`
+    return `${this.name.first} ${this.name.last}`
 })
+
 
 exports.User = mongoose.model('users', UserSchema)
