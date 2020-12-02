@@ -10,16 +10,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <span class="navbar-text col text-left appHeading">MyDay</span>
             {{#unless loggedIn}}
-                <a class="mr-2 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isRegisterActive}}"
+                <a class="mr-2 mt-2 mb-1 nav-item nav-link btn btn-light col-auto {{isRegisterActive}}"
                    href="/users/register">Sign Up</a>
-                <a class="mr-2 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isLoginActive}}"
+                <a class="mr-2 mt-2 mb-1 nav-item nav-link btn btn-light col-auto {{isLoginActive}}"
                    href="/users/login">Login</a>
             {{else}}
-                <a class="mr-2 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isAddActive}}"
+                <a class="mr-2 mt-2 mb-1 nav-item nav-link btn btn-light col-auto {{isAddActive}}"
                    href="/diary_entries/add">Add Entry</a>
-                <a class="mr-2 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isViewAllActive}}"
+                <a class="mr-2 mt-2 mb-1 nav-item nav-link btn btn-light col-auto {{isViewAllActive}}"
                    href="/diary_entries/viewAll">View Entries</a>
-                <a class="mr-2 mt-2 mb-2 nav-item nav-link btn btn-light col-auto {{isSearchActive}}"
+                <a class="mr-2 mt-2 mb-1 nav-item nav-link btn btn-light col-auto {{isSearchActive}}"
                    href="/diary_entries/search"><i data-feather="search"></i>Search</a>
 
                 <div class="btn-group">
