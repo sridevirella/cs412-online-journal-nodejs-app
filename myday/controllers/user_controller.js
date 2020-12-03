@@ -93,7 +93,7 @@ exports.userController = {
                 } else {
                     req.logout()
                     req.flash('success', 'Password has been updated successfully, Please sign in with new password')
-                    res.redirect('/')
+                    res.redirect('/users/login')
                 }
             })
 
