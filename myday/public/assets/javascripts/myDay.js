@@ -14,18 +14,20 @@ $(document).ready(function() {
 
     $('#addHeartIcon').click(function() {
         if($(this).attr('id') === 'addHeartIcon') {
+            if ($("#favorite").is(':checked') ) {
+                $('#addHeartIcon').css('color', 'black')
+                $('#favorite').prop('checked', false)
 
+                $('#favorite').val('off')
+                return;
+            }
             $('#addHeartIcon').css('color', 'red')
             $('#favorite').prop('checked', true)
-        }
-        else {
-            $('#addHeartIcon').css('color', 'black')
-            $('#favorite').prop('checked', false)
+
+            $('#favorite').val('on')
         }
     })
 })
-
-
 
 $(function () {
     let duration = 4000

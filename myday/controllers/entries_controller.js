@@ -28,6 +28,7 @@ exports.entryController = {
 
         if (req.isAuthenticated()) {
             try {
+
                 let entryIds = req.user.entries
                 let allEntries = await findAllDairyEntries(entryIds)
 
@@ -74,6 +75,7 @@ exports.entryController = {
         }
     },
     view: async (req, res, next) => {
+
         if (req.isAuthenticated()) {
             try {
                 let entry = await read(req.query.id.trim())
@@ -105,10 +107,9 @@ exports.entryController = {
     destroy: async (req, res, next) => {
 
         try {
-
             let entry = await DiaryEntry.findOneAndDelete({_id: req.query.id.trim()})
 
-            req.user.entries.pull(entry.id.trim())
+            req.user.entries.splice(Array.prototype.indexOf(entry.id.trim()), 1)
             req.user = await User.findByIdAndUpdate({_id: req.user.id.trim()}, {entries: req.user.entries}, {new: true})
 
             req.flash('success', `Title:${entry.title} diary entry deleted successfully`)
@@ -265,7 +266,8 @@ const update = async (req, res, next) => {
             let entry = await DiaryEntry.findOneAndUpdate({_id: req.body.entryId}, {
                 date: entryParams.date,
                 title: entryParams.title,
-                notes: entryParams.notes
+                notes: entryParams.notes,
+                favorite: entryParams.favorite
             })
 
             req.flash('success', `Title:${entry.title}, diary entry updated successfully`)

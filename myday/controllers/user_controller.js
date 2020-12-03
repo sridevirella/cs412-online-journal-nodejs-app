@@ -1,7 +1,6 @@
 let User = require('../models/user').User
 const {body, validationResult} = require('express-validator')
 const EncryptorDecrypt = require("encrypt_decrypt")
-const bcrypt = require('bcrypt')
 const passport = require('passport')
 
 let encryptDecryptObj = new EncryptorDecrypt()
@@ -35,6 +34,7 @@ exports.userController = {
             await update(req, res, next)
     },
     profile: async(req, res, next) => {
+
         if(req.isAuthenticated()) {
             try {
                 let user = req.user
@@ -91,8 +91,9 @@ exports.userController = {
                         res.redirect('/users/profile')
                     }
                 } else {
+                    req.logout()
                     req.flash('success', 'Password has been updated successfully, Please sign in with new password')
-                    res.redirect('/users/login')
+                    res.redirect('/')
                 }
             })
 
@@ -104,9 +105,9 @@ exports.userController = {
     logout: async (req, res) => {
 
         if(req.isAuthenticated()) {
-            req.logout();
+            req.logout()
             req.flash('success', `successfully logged out`)
-            res.redirect('/');
+            res.redirect('/')
         } else {
         req.flash('error', 'You have not log in')
         res.redirect('/users/login')

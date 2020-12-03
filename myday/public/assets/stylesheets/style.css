@@ -66,7 +66,7 @@ body {
 
 .navbar-toggler {
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
 }
 
 .navbar-dark .navbar-text {
@@ -90,6 +90,10 @@ h1 {
 
 #heart.red {
   color: red;
+}
+
+#searchWord, #searchDate {
+  display:none;
 }
 
 #sticky-footer {
@@ -122,6 +126,7 @@ h1 {
   z-index: 999;
   margin-bottom: 0px!important;
 }
+
 .card {
   border: none;
 }
