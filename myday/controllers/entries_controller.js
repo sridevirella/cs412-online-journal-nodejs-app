@@ -147,7 +147,7 @@ exports.entryController = {
         } else {
             try {
                 let matchedEntries = await titleDateSearch(req)
-
+                
                 req.flash('success', 'Diary entries for the search retrieved successfully')
                 res.render('diary_entries/search_diary_entries',
                     {
