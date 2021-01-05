@@ -1,22 +1,13 @@
-# neiu-cs-420
-
-## Application Name:
-
-My Day Web Application
-
-
-## Project Objective:
+# My Day Web Application
 
 MyDay is an online journal for an individual to save and keep track of their day-to-day activities or memories securely. This website is designed for those users with a habit of writing book/offline diary, to use at their convenience. They can access this website from anywhere to make an entry or view their entries securely anytime without having to carry a book diary.
 
-Technologies Used: Html, Css, Bootstrap, JavaScript, JQuery, MongoDB, Mongoose, NodeJS, Express.
+Design/Used Technologies: Html, Css, Bootstrap, JavaScript, JQuery, MongoDB, Mongoose, NodeJS, Express.
 
-
-
-## Motivation:
-
-The main motivation behind this app is, that this is a combination of things that I always wanted at one place but could never have it. A user doesn’t have to go to multiple apps to write a diary or look back at a memory or create a checklist(album and to-do checklist are future functionalities). This is highly useful for people who wants to organize their day to day activities. On top of it, this app is accessible anywhere over internet with a personal authentication.
-
+-	Using Bootstrap, JavaScript and Html, I built a fully responsive website, that is, it fits aesthetically to any screen size without cropping the UI elements.
+-	It handles success, error messages and validations for all screens.
+-	Only authorized users can access main features like journal entry, search and profile update.
+-	The app uses MongoDB and Mongoose to store and retrieve journal data.
 
 ## GUI or Server-Side Components:
 
