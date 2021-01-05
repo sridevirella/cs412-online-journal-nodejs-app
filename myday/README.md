@@ -1,4 +1,4 @@
-# My Day Web Application
+# MyDay Web Application
 
 MyDay is an online journal for an individual to save and keep track of their day-to-day activities or memories securely. This website is designed for those users with a habit of writing book/offline diary, to use at their convenience. They can access this website from anywhere to make an entry or view their entries securely anytime without having to carry a book diary.
 
