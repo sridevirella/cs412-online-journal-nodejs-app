@@ -22,3 +22,7 @@ This is an online web portal that
 -	lets users view email, edit first name or last name. 
 -	lets users change password.
 -	lets users logout.
+
+## Deployment
+
+https://aqueous-beyond-99823.herokuapp.com/ hosted on the heroku.
